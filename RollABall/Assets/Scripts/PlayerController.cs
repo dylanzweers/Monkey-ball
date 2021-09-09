@@ -68,6 +68,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        hasJumped = true;
+    }
+
+
+
     void addOneToScore()
     {
         ++score;
