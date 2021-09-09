@@ -5654,6 +5654,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2059633768}
     m_Modifications:
+    - target: {fileID: 1531159224574251555, guid: 6eeeb6f0552367b45bdf710194aea82b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e137b0f9d78da6c459e0354b768a6cf7, type: 2}
     - target: {fileID: 3617421886087865875, guid: 6eeeb6f0552367b45bdf710194aea82b, type: 3}
       propertyPath: m_Name
       value: kratdingsam
