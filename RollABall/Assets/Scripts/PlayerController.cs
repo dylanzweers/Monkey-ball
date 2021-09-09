@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         ++score;
         setScoreText();
 
-        if(score == 10){
+        if(score == 24){
             winTextObject.SetActive(true);
         }
     }
