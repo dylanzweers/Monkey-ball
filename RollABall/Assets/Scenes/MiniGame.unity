@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028468, g: 0.22571579, b: 0.30692378, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802845, g: 0.22571556, b: 0.306923, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -626,7 +626,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41322
+  m_Name: pb_Mesh27456
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1611,7 +1611,7 @@ TerrainCollider:
   m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: e51727942c82c8c49b170a446463c678, type: 2}
-  m_EnableTreeColliders: 1
+  m_EnableTreeColliders: 0
 --- !u!218 &491565157
 Terrain:
   m_ObjectHideFlags: 0
@@ -1861,6 +1861,7 @@ GameObject:
   - component: {fileID: 586200853}
   - component: {fileID: 586200852}
   - component: {fileID: 586200851}
+  - component: {fileID: 586200857}
   m_Layer: 0
   m_Name: Stairs
   m_TagString: Untagged
@@ -3733,6 +3734,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &586200857
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586200850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2038198151}
 --- !u!1001 &642880950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4606,6 +4621,7 @@ GameObject:
   - component: {fileID: 1430254893}
   - component: {fileID: 1430254892}
   - component: {fileID: 1430254891}
+  - component: {fileID: 1430254897}
   m_Layer: 0
   m_Name: ramp
   m_TagString: Untagged
@@ -4897,6 +4913,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!64 &1430254897
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430254890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!4 &1431932769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4173623502036796275, guid: 06029111d2d0c9e49b4d8e4645585eec, type: 3}
@@ -6150,7 +6180,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41248
+  m_Name: pb_Mesh27378
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6516,7 +6546,7 @@ MonoBehaviour:
   speed: 10
   scoreText: {fileID: 349424679}
   winTextObject: {fileID: 136590253}
-  jumpheight: 10
+  jumpheight: 25
 --- !u!1 &2145246012
 GameObject:
   m_ObjectHideFlags: 0
