@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject winTextObject;
     public int jumpheight = 10;
+    public int itemsToWin = 10;
 
     private Rigidbody rb;
     private float movementX;
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3(movementX,movementZ,movementY);
          movementZ = 0;
-        //rb.AddForce(movement * speed);
+        rb.AddForce(movement * speed);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -65,6 +66,10 @@ public class PlayerController : MonoBehaviour
         {
         other.gameObject.SetActive(false);
         addOneToScore();
+        }
+        if (other.gameObject.CompareTag("Destructable"))
+        {
+            other.gameObject.SetActive(false);
         }
     }
 
@@ -80,7 +85,8 @@ public class PlayerController : MonoBehaviour
         ++score;
         setScoreText();
 
-        if(score == 24){
+        if(score == itemsToWin)
+        {
             winTextObject.SetActive(true);
         }
     }
