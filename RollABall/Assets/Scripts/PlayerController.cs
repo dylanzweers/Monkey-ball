@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public int jumpheight = 10;
     public int itemsToWin = 10;
     public Camera camera;
+    public int health = 10;
 
     private Rigidbody rb;
     private float movementX;
@@ -97,6 +99,14 @@ public class PlayerController : MonoBehaviour
         {
             HasKey = true;
             other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            --health;
+            if(health <= 0)
+            {
+                SceneManager.LoadScene("NewMonkeyBall");
+            }
         }
     }
 
