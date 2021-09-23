@@ -18,5 +18,6 @@ public class MoveToPlayer : MonoBehaviour
     void FixedUpdate()
     {
         RB.MovePosition(Vector3.Lerp(transform.position, player.position, speed * Time.deltaTime));
+        transform.LookAt(player);
     }
 }
