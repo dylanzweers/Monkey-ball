@@ -22,14 +22,11 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
     private bool hasJumped = false;
     Vector3 newPosition;
-    Vector3 dest;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         winTextObject.SetActive(false);
-        newPosition = transform.position;
-        dest = transform.position;
     }
 
     // Update is called once per frame
@@ -40,18 +37,15 @@ public class PlayerController : MonoBehaviour
 
     void OnLook(InputValue movementValue)
     {
-        Vector2 movementVector = movementValue.Get<Vector2>();
+
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(movementVector);
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out hit))
         {
             newPosition = hit.point;
+            transform.position = newPosition;
         }
-    }
 
-    void OnClick(InputValue movementValue)
-    {
-        dest = newPosition;
     }
 
     void OnJump()
@@ -69,7 +63,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(Vector3.Lerp(transform.position, dest, speed * Time.deltaTime));
+        // Vector3 movement = new Vector3(movementX,movementZ,movementY);
+        //  movementZ = 0;
+        // rb.AddForce(movement * speed);
+        transform.position = newPosition;
     }
 
     private void OnTriggerEnter(Collider other)
