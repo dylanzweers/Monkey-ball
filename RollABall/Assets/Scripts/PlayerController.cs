@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float pointerX;
     private float pointerY;
     private float movementZ = 0.0f;
+    private bool HasKey = false;
     private int score = 0;
     private bool hasJumped = false;
     Vector3 newPosition;
@@ -56,9 +57,10 @@ public class PlayerController : MonoBehaviour
 
     void OnJump()
     {
-        if(hasJumped == false){
-        movementZ = jumpheight;
-        hasJumped = true;
+        if (hasJumped == false)
+        {
+            movementZ = jumpheight;
+            hasJumped = true;
         }
     }
 
@@ -75,13 +77,25 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         hasJumped = false;
-        if(other.gameObject.CompareTag("PickUp"))
+        if (other.gameObject.CompareTag("PickUp"))
         {
-        other.gameObject.SetActive(false);
-        addOneToScore();
+            other.gameObject.SetActive(false);
+            addOneToScore();
         }
         if (other.gameObject.CompareTag("Destructable"))
         {
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("Door"))
+        {
+            if (HasKey)
+            {
+                other.gameObject.SetActive(false);
+            }
+        }
+        if (other.gameObject.CompareTag("Key"))
+        {
+            HasKey = true;
             other.gameObject.SetActive(false);
         }
     }
@@ -98,7 +112,7 @@ public class PlayerController : MonoBehaviour
         ++score;
         setScoreText();
 
-        if(score == itemsToWin)
+        if (score == itemsToWin)
         {
             winTextObject.SetActive(true);
         }
