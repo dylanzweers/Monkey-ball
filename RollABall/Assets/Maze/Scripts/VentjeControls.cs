@@ -119,6 +119,10 @@ public class VentjeControls : MonoBehaviour
         {
             toCheckPoint();
         }
+        if (collision.gameObject.tag == "Door")
+        {
+            toCheckPoint();
+        }
 
 
 
