@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Input/PlayerInput.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Maze/Input/PlayerInput.inputactions'
 
 using System;
 using System.Collections;
