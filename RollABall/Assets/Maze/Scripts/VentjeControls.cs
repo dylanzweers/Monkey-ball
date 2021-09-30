@@ -36,10 +36,7 @@ public class VentjeControls : MonoBehaviour
         if (rb.position.y < -50)
         {
 
-            transform.position = checkpoint;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            transform.rotation = Quaternion.identity;
+            toCheckPoint();
         }
 
 
@@ -58,6 +55,16 @@ public class VentjeControls : MonoBehaviour
 
 
     }
+
+
+    private void toCheckPoint()
+    {
+        transform.position = checkpoint;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+    }
+
 
     void FixedUpdate()
     {
@@ -107,6 +114,14 @@ public class VentjeControls : MonoBehaviour
         //{
         //    collision.collider.transform.SetParent(transform);
         //}
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            toCheckPoint();
+        }
+
+
+
     }
 
     private void OnCollisionExit(Collision collision)
